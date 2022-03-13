@@ -1,0 +1,26 @@
+﻿@model List<firstday.Models.student>
+@{
+    ViewBag.Title = "index";
+}
+
+<link rel="stylesheet" href="~/Content/index.css" />
+<div id="form">
+    <h2>Students</h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Faculty</th>
+        </tr>
+
+        @foreach (var sdata in Model)
+        {
+            <tr>
+                <td>@sdata.id</td>
+                <td>@sdata.name</td>
+                <td>@sdata.faculty</td>
+            </tr>
+        }
+    </table>
+</div>
+<a href="@Url.Action("create")"><h4>Add new records</h4></a>
