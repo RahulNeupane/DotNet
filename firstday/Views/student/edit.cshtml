@@ -1,0 +1,19 @@
+﻿@model firstday.Models.student
+@{
+    ViewBag.Title = "edit";
+}
+<link rel="stylesheet" href="~/Content/index.css">
+<h2>Edit details</h2>
+@using (Html.BeginForm("updateData", "student"))
+{
+    <input type="hidden" name="id" value="@Model.id" />
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
+        <input type="text" name="name" class="form-control" value="@Model.name" required>
+    </div>
+    <label class="col-md-2">Faculty</label>
+    <div class="col-md-4">
+        <input type="text" name="faculty" class="form-control" value="@Model.faculty" required>
+    </div>
+    <button class="btn">Edit</button>
+}

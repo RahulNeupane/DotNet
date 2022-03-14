@@ -216,6 +216,7 @@
     <Content Include="Views\student\index.cshtml" />
     <Content Include="Views\rahul\create.cshtml" />
     <Content Include="Views\student\create.cshtml" />
+    <Content Include="Views\student\edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

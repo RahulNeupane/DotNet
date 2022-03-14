@@ -1,6 +1,7 @@
 ﻿@model List<firstday.Models.student>
 @{
     ViewBag.Title = "index";
+    int sn = 0;
 }
 
 <link rel="stylesheet" href="~/Content/index.css" />
@@ -8,7 +9,8 @@
     <h2>Students</h2>
     <table border="1">
         <tr>
-            <th>Id</th>
+            <th>SN</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Faculty</th>
         </tr>
@@ -16,14 +18,18 @@
         @foreach (var sdata in Model)
         {
             <tr>
+                <td>@(++sn)</td>
                 <td>@sdata.id</td>
                 <td>@sdata.name</td>
                 <td>@sdata.faculty</td>
+                <td>
+                <a href="@Url.Action("edit",new {id=sdata.id})"><h4>Edit</h4></a>        
+                </td>
+                <td>
+                <a href="@Url.Action("deleteData",new {id=sdata.id})"><h4>Delete</h4></a>        
+                </td>
             </tr>
         }
     </table>
 </div>
 <a href="@Url.Action("create")"><h4>Add new records</h4></a>
-
-@*hello world*@
-@*k xa yr*@

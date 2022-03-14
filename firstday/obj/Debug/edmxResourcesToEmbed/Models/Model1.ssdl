@@ -15,7 +15,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="faculty" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="faculty" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityContainer Name="rahulModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
