@@ -40,8 +40,7 @@ namespace firstday.Controllers
             return View(student1);
         }
         public ActionResult updateData(student student1)
-        {
-            
+        {   
             datab.Entry(student1).State = EntityState.Modified;
             datab.SaveChanges();
             return RedirectToAction("Index");

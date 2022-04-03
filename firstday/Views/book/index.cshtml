@@ -1,0 +1,33 @@
+﻿@model List<firstday.Models.book>
+@{
+    ViewBag.Title = "index";
+    int sn = 0;
+}
+
+<link rel="stylesheet" href="~/Content/index.css" />
+<div id="form">
+    <h2>Books</h2>
+    <table border="1">
+        <tr>
+            <th>SN</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        @foreach (var bookdata in Model)
+        {
+            <tr>
+                <td>@(++sn)</td>
+                <td>@bookdata.id</td>
+                <td>@bookdata.title</td>
+                <td>@bookdata.author</td>
+                <td><a href="@Url.Action("edit",new {id=bookdata.id})"><h4>Edit</h4></a></td>
+                <td><a href="@Url.Action("deleteData",new {id=bookdata.id})"><h4>Delete</h4></a></td>
+
+            </tr>
+        }
+    </table>
+</div>
+<a href="@Url.Action("create")"><h4>Add new records</h4></a>
+
+

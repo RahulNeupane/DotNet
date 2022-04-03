@@ -3,6 +3,8 @@
   <EntityContainer Name="mainEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="employees" EntityType="rahulModel.employee" />
     <EntitySet Name="students" EntityType="rahulModel.student" />
+    <EntitySet Name="teachers" EntityType="rahulModel.teacher" />
+    <EntitySet Name="books" EntityType="rahulModel.book" />
   </EntityContainer>
   <EntityType Name="employee">
     <Key>
@@ -20,5 +22,21 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="faculty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="49" FixedLength="false" Unicode="false" />
+    <Property Name="salary" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="author" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
