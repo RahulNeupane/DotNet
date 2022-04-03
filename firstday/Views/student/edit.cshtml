@@ -4,7 +4,7 @@
 }
 <link rel="stylesheet" href="~/Content/index.css">
 <h2>Edit details</h2>
-@using (Html.BeginForm("updateData", "student"))
+@using (Html.BeginForm("updateData", "student")) //student is controller name
 {
     <input type="hidden" name="id" value="@Model.id" />
     <label class="col-md-2">Name</label>
