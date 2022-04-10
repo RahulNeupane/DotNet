@@ -12,10 +12,10 @@ namespace firstday.Controllers
     {
         mainEntities db = new mainEntities();
         // GET: rahul
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            List<employee> data = db.employees.ToList();
-            return View(data);
+            //List<employee> data = db.employees.ToList();
+            return View(db.employees.Where(x=>x.name.Contains(searching)||searching == null).ToList());
         }
 
         public ActionResult create()
